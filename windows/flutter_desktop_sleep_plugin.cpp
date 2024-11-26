@@ -94,7 +94,7 @@ LRESULT CALLBACK WindowCloseWndProc(HWND hWnd, UINT message, WPARAM wParam, LPAR
             auto args = std::make_unique<flutter::EncodableValue>("sleep");
             channel_->InvokeMethod("onWindowsSleep", std::move(args));
         } else if (wParam == PBT_APMRESUMEAUTOMATIC) {
-            auto args = std::make_unique<flutter::EncodableValue>("woke_up");
+            auto args = std::make_unique<flutter::EncodableValue>("wake_up");
             channel_->InvokeMethod("onWindowsSleep", std::move(args));
         }
         return TRUE;
